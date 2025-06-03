@@ -13,6 +13,7 @@
 }
 
 .navLink {
+  color: $main;
   &:hover,
   &:focus {
     color: $button-hover;
