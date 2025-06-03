@@ -1,0 +1,13 @@
+@import "/src/index.scss";
+
+.header {
+  padding: 24px 0;
+  background-color: $inputs;
+  border-bottom: 1px solid $badges;
+}
+
+.headerContainer {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}

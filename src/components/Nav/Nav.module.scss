@@ -1,0 +1,26 @@
+@import "/src/index.scss";
+
+.nav {
+  margin: 0 auto;
+}
+
+.navList {
+  display: flex;
+  gap: 32px;
+}
+
+.navItem {
+}
+
+.navLink {
+  &:hover,
+  &:focus {
+    color: $button-hover;
+  }
+
+  transition: $transition;
+}
+
+.active {
+  color: $button-hover;
+}

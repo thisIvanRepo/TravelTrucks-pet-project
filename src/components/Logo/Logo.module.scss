@@ -1,0 +1,14 @@
+@import "../../index.scss";
+
+.logo {
+  text-transform: capitalize;
+  color: $main;
+  font-weight: 800;
+  max-width: 136px;
+  max-height: 15px;
+}
+
+.logoSpan {
+  text-transform: capitalize;
+  color: $text;
+}
