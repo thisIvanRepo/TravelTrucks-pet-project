@@ -1,0 +1,7 @@
+@use "./colors" as *;
+
+@mixin setting-hero-title {
+  color: $inputs;
+  font-weight: 600;
+  line-height: 0.7;
+}

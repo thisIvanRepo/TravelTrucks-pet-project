@@ -1,0 +1,23 @@
+.sectionHome {
+  --liner-gradiend: hsla(0, 0%, 0%, 0.2);
+
+  background-image: linear-gradient(
+      var(--liner-gradiend),
+      var(--liner-gradiend)
+    ),
+    url("/src/img/bg/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  @media (min-resolution: 192dpi) {
+    background-image: url("/src/img/bg/hero@x2.jpg");
+  }
+}
+
+.containerHome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
