@@ -1,4 +1,9 @@
+import FilterForm from "../../components/filterForm/FilterForm";
 
 export default function Catalog() {
-  return <div></div>;
+  return (
+    <div>
+      <FilterForm></FilterForm>
+    </div>
+  );
 }
