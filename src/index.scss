@@ -1,4 +1,2 @@
-@import "./styles/reset/reset.scss";
-@import "./styles/abstracts/colors.scss";
-@import "./styles/abstracts/animation.scss";
-@import "./styles/base/base.scss";
+@use "./styles/reset/reset.scss";
+@use "./styles/base/base.scss";

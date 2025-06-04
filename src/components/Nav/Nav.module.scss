@@ -1,4 +1,4 @@
-@import "/src/index.scss";
+@use "/src/styles/abstracts" as *;
 
 .nav {
   margin: 0 auto;
@@ -19,7 +19,7 @@
     color: $button-hover;
   }
 
-  transition: $transition;
+  transition: $transition-time $transition-duration;
 }
 
 .active {

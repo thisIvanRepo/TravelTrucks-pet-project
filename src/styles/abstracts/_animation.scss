@@ -1,0 +1,14 @@
+$transition-time: 0.45s;
+$transition-duration: ease;
+$transform-scale: scale(1.03);
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

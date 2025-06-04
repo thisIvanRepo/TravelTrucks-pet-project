@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@use "/src/styles/abstracts" as *;
 
 .logo {
   text-transform: capitalize;
@@ -6,6 +6,11 @@
   font-weight: 800;
   max-width: 136px;
   max-height: 15px;
+  transition: $transition-time;
+
+  &:hover {
+    transform: $transform-scale;
+  }
 }
 
 .logoSpan {
