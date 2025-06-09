@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button/Button";
+import Button from "../../components/ButtonUseg/ButtonUseg";
 import Container from "../../components/Container/Container";
 import Hero from "../../components/Hero/Hero";
 import Section from "../../components/Section/Section";
