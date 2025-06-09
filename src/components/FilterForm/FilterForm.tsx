@@ -12,18 +12,18 @@ import EquipmentFilter from "../EquipmentFilter/EquipmentFilter";
 import TypeFilter from "../TypeFilter/TypeFilter";
 import ButtonUseg from "../ButtonUseg/ButtonUseg";
 import { filtersParams } from "../../redux/selectors";
-import { getTrucks } from "../../api/trucks";
+import { fetchTrucks } from "../../redux/trucksSlise";
+import type { AppDispatch } from "../../redux/store";
 
 const equipmentOptions = ["AC", "Automatic", "Kitchen", "TV", "Bathroom"];
 const typeOptions = ["Van", "FullyIntegrated", "Alcove"];
 
 export default function FilterForm() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { location, selectedEquipment, type } = useSelector(filtersParams);
 
-  const handleSubmit = async () => {
-    const campers = await getTrucks({ location, selectedEquipment, type });
-    console.log(campers);
+  const handleSubmit = () => {
+    dispatch(fetchTrucks({ location, selectedEquipment, type }));
   };
 
   const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,8 +47,8 @@ export default function FilterForm() {
         icon={iconsMap["Location"]}
       />
 
-      <div className={style.filters}>
-        <p>Filters</p>
+      <div className={style.filtres}>
+        <p style={{ marginBottom: "32px" }}>Filters</p>
         <EquipmentFilter
           options={equipmentOptions}
           selected={selectedEquipment}

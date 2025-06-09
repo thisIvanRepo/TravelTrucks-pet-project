@@ -1,46 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getTrucks } from "../api/trucks";
-
-interface Camper {
-  id: string;
-  name: string;
-  price: number;
-  rating: number;
-  location: string;
-  description: string;
-  form: string;
-  length: string;
-  width: string;
-  height: string;
-  tank: string;
-  consumption: string;
-  transmission: string;
-  engine: string;
-
-  AC: boolean;
-  bathroom: boolean;
-  kitchen: boolean;
-  TV: boolean;
-  radio: boolean;
-  refrigerator: boolean;
-  microwave: boolean;
-  gas: boolean;
-  water: boolean;
-
-  gallery: {
-    thumb: string;
-    original: string;
-  }[];
-
-  reviews: {
-    reviewer_name: string;
-    reviewer_rating: number;
-    comment: string;
-  }[];
-}
+import type { Camper } from "../interface/camper";
 
 interface selectedTrucksState {
-  items: Camper[];
+  total: number;
+  cumpers: Camper[];
   loading: boolean;
   error: string | null;
 }
@@ -51,16 +15,17 @@ interface Filters {
   type: string;
 }
 
-export const fetchTrucks = createAsyncThunk<Camper[], Filters>(
-  "trucks/fetchTrucks",
-  async (filters) => {
-    const data = await getTrucks(filters);
-    return data;
-  }
-);
+export const fetchTrucks = createAsyncThunk<
+  { items: Camper[]; total: number },
+  Filters
+>("trucks/fetchTrucks", async (filters) => {
+  const data = await getTrucks(filters);
+  return data;
+});
 
 const initialState: selectedTrucksState = {
-  items: [],
+  total: 0,
+  cumpers: [],
   loading: false,
   error: null,
 };
@@ -77,7 +42,8 @@ const truckSlice = createSlice({
       })
       .addCase(fetchTrucks.fulfilled, (state, action) => {
         state.loading = false;
-        state.items = action.payload;
+        state.cumpers = action.payload.items;
+        state.total = action.payload.total;
       })
       .addCase(fetchTrucks.rejected, (state, action) => {
         state.loading = false;

@@ -5,3 +5,12 @@
   font-weight: 600;
   line-height: 0.7;
 }
+
+@mixin grid-filters-items {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 360px;
+  row-gap: 8px;
+  column-gap: 12px;
+  margin-bottom: 37px;
+}

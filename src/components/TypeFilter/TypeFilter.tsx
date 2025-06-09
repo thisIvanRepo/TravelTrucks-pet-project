@@ -1,6 +1,7 @@
 import CustomChekbox from "../CustomChekbox/CustomChekbox";
 import FiltresTitle from "../FiltersTitle/FiltresTitle";
 import { iconsMap } from "../../constants/iconsMap";
+import style from "./TypeFilter.module.scss";
 
 type Props = {
   options: string[];
@@ -12,7 +13,7 @@ export default function TypeFilter({ options, selected, onSelect }: Props) {
   return (
     <>
       <FiltresTitle>Vehicle type</FiltresTitle>
-      <ul>
+      <ul className={style.list}>
         {options.map((option) => (
           <li key={option}>
             <CustomChekbox

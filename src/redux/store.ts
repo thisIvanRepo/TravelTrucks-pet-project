@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import equipmentFilterReducer from "./equipmentFilterSlice";
+import trucksReducer from "./trucksSlise";
 
 export const store = configureStore({
   reducer: {
     equipmentFilter: equipmentFilterReducer,
+    trucks: trucksReducer,
   },
 });
 

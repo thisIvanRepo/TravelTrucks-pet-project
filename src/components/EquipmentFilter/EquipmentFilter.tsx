@@ -1,6 +1,7 @@
 import CustomChekbox from "../CustomChekbox/CustomChekbox";
 import FiltresTitle from "../FiltersTitle/FiltresTitle";
 import { iconsMap } from "../../constants/iconsMap";
+import style from "./EquipmentFilter.module.scss";
 
 type Props = {
   options: string[];
@@ -16,7 +17,7 @@ export default function EquipmentFilter({
   return (
     <>
       <FiltresTitle>Vehicle equipment</FiltresTitle>
-      <ul>
+      <ul className={style.list}>
         {options.map((option) => (
           <li key={option}>
             <CustomChekbox
