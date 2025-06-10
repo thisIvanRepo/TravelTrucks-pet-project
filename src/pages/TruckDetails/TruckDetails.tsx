@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { fetchTrucksDetails } from "../../api/trucks";
 import style from "./TruckDetails.module.scss";
 import Container from "../../components/Container/Container";
+import Loading from "../Loading/Loading";
 
 export default function TruckDetails() {
   const location = useLocation();
@@ -30,9 +31,13 @@ export default function TruckDetails() {
 
   return (
     <Container className={style.detailsContainer}>
-      <div className={style.headerDetails}>
-        <h2 className={style.title}>{trackDetails.name}</h2>
-      </div>
+      {isLoading && <Loading />}
+      {error && <p>Error: {error}</p>}
+      {trackDetails && (
+        <div className={style.headerDetails}>
+          <h2 className={style.title}>{trackDetails.name}</h2>
+        </div>
+      )}
     </Container>
   );
 }
