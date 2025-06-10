@@ -1,4 +1,5 @@
 export interface Camper {
+  [key: string]: string | boolean | number | undefined;
   id: string;
   name: string;
   price: number;
