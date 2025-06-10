@@ -1,9 +1,7 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from "./NavDetails.module.scss";
 
 export default function NavDetails() {
-  const { catalogId } = useParams();
-
   return (
     <ul className={style.navList}>
       <li className={style.navItem}>

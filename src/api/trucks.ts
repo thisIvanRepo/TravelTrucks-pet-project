@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { Camper } from "../interface/camper";
 
 const BASE_URL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers";
 
@@ -48,7 +49,9 @@ export const getTrucks = async (filters: Filters) => {
   }
 };
 
-export const fetchTrucksDetails = async (id) => {
+export const fetchTrucksDetails = async (
+  id: string
+): Promise<Camper | undefined> => {
   const params = new URLSearchParams();
   params.append("id", id);
 

@@ -16,19 +16,30 @@ export default function TruckDetails() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const getMoreInfo = async (id: number | string | undefined) => {
+    const getMoreInfo = async (id: string) => {
       try {
         setIsLoading(true);
         const data = await fetchTrucksDetails(id);
 
-        setTrackDetails(data);
+        if (data) {
+          setTrackDetails(data);
+        } else {
+          setError("Truck not found");
+        }
       } catch (err) {
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Unknown error");
+        }
       } finally {
         setIsLoading(false);
       }
     };
-    getMoreInfo(catalogId);
+
+    if (catalogId) {
+      getMoreInfo(catalogId);
+    }
   }, [catalogId]);
 
   return (
