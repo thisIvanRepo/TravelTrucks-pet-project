@@ -4,7 +4,6 @@ export default function Loading() {
   return (
     <div
       style={{
-        backgroundColor: "#475467",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -13,7 +12,7 @@ export default function Loading() {
       }}
     >
       <MoonLoader
-        color="#F7F7F7"
+        color="#E44848"
         cssOverride={{}}
         loading
         size={100}
