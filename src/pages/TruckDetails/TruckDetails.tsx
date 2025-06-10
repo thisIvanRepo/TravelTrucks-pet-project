@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import { fetchTrucksDetails } from "../../api/trucks";
 import style from "./TruckDetails.module.scss";
 import Container from "../../components/Container/Container";
@@ -20,7 +20,7 @@ export default function TruckDetails() {
       try {
         setIsLoading(true);
         const data = await fetchTrucksDetails(id);
-        console.log(data);
+
         setTrackDetails(data);
       } catch (err) {
         setError(err.message);
@@ -85,6 +85,7 @@ export default function TruckDetails() {
             </div>
           </div>
           <NavDetails />
+          <Outlet />
         </>
       )}
     </Container>

@@ -1,7 +1,11 @@
+import Container from "../Container/Container";
+import FormBoging from "../FormBoking/FormBoging";
+
 export default function Revievs() {
   return (
-    <div>
-      
-    </div>
-  )
+    <Container>
+      <div>Revievs</div>
+      <FormBoging />
+    </Container>
+  );
 }

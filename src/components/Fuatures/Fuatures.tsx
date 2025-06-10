@@ -1,7 +1,11 @@
+import Container from "../Container/Container";
+import FormBoging from "../FormBoking/FormBoging";
+
 export default function Fuatures() {
   return (
-    <div>
-      
-    </div>
-  )
+    <Container>
+      <div>Fuatures</div>
+      <FormBoging />
+    </Container>
+  );
 }

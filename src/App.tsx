@@ -7,19 +7,20 @@ import Loading from "./pages/Loading/Loading";
 const Home = lazy(() => import("./pages/Home/Home"));
 const Catalog = lazy(() => import("./pages/Catalog/Catalog"));
 const TruckDetails = lazy(() => import("./pages/TruckDetails/TruckDetails"));
+const Futures = lazy(() => import("./components/Fuatures/Fuatures"));
+const Revievs = lazy(() => import("./components/Revievs/Revievs"));
 
 function App() {
   return (
     <>
-      {" "}
       <Header />
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/catalog/:catalogId" element={<TruckDetails />}>
-            <Route path="futures" element={<div>futures</div>} />
-            <Route path="revievs" element={<div>revievs</div>} />
+            <Route path="futures" element={<Futures />} />
+            <Route path="revievs" element={<Revievs />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

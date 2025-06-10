@@ -11,7 +11,7 @@ export default function NavDetails() {
           className={({ isActive }) =>
             isActive ? `${style.navLink} ${style.active}` : style.navLink
           }
-          to={`/catalog/${catalogId}/futures`}
+          to={`futures`}
         >
           Feutures
         </NavLink>
@@ -21,7 +21,7 @@ export default function NavDetails() {
           className={({ isActive }) =>
             isActive ? `${style.navLink} ${style.active}` : style.navLink
           }
-          to={`/catalog/${catalogId}/revievs`}
+          to={`revievs`}
         >
           Reviews
         </NavLink>
