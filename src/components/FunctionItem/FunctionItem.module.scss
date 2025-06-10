@@ -1,0 +1,18 @@
+@use "../../styles/abstracts/colors" as *;
+
+.function {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 143px;
+  border-radius: 18px;
+  background-color: $badges;
+  padding: 12px 18px;
+}
+
+.text {
+  color: $main;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}

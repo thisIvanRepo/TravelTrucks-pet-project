@@ -1,0 +1,41 @@
+@use "/src/styles/abstracts/" as *;
+
+.navList {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  margin-bottom: 68px;
+}
+
+.navList::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  z-index: 1;
+  width: 100%;
+  background-color: $gray-light;
+  bottom: -24px;
+}
+
+.navLink {
+  position: relative;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: $main;
+
+  &:hover {
+    color: $button-hover;
+  }
+}
+
+.active::before {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: $button-hover;
+  color: $button-hover;
+  bottom: -26px;
+  z-index: 2;
+}

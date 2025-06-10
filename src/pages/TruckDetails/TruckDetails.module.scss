@@ -1,0 +1,88 @@
+@use "../../styles/abstracts/colors" as *;
+
+.detailsContainer {
+  padding-top: 48px;
+  padding-bottom: 60px;
+}
+
+.imgList {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  gap: 48px;
+  margin: 0 auto;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+
+.imgItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 292px;
+  height: 312px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imgsTruck {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: $main;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: $main;
+  margin-bottom: 28px;
+}
+
+.revievsLocation {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.revievsBlock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.linkRevievs {
+  color: $main;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.locationBlock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.textLocation {
+  color: $main;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.details {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 60px;
+}

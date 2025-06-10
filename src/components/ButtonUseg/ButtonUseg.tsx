@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 type ButtonProps = {
   onClick?: () => void;
@@ -8,6 +9,7 @@ type ButtonProps = {
   variant: "outlined" | "contained";
   text: string;
   width?: number;
+  to?: string;
 };
 
 export default function ButtonUseg({
@@ -15,11 +17,14 @@ export default function ButtonUseg({
   width,
   variant,
   onClick,
+  to,
 }: ButtonProps) {
   return (
     <Button
       onClick={onClick}
       variant={variant}
+      component={to ? Link : "button"}
+      to={to}
       sx={{
         textTransform: "none",
         fontFamily: "Inter, sans-serif",
