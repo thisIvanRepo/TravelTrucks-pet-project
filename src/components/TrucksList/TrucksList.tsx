@@ -3,6 +3,7 @@ import TrucksItem from "../TrucksItem/TrucksItem";
 import { trucks } from "../../redux/selectors";
 import ButtonUseg from "../ButtonUseg/ButtonUseg";
 import { useEffect, useState } from "react";
+import style from "./TruckList.module.scss";
 
 export default function TrucksList() {
   const { cumpers, loading, error } = useSelector(trucks);
@@ -24,7 +25,7 @@ export default function TrucksList() {
   }, [cumpers]);
 
   return (
-    <div>
+    <div className={style.wrapperTruckList}>
       {loading && <p>is Loading...</p>}
       {error && <p>{error}</p>}
       <ul>

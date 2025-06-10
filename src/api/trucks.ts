@@ -47,3 +47,15 @@ export const getTrucks = async (filters: Filters) => {
     console.log(error);
   }
 };
+
+export const fetchTrucksDetails = async (id) => {
+  const params = new URLSearchParams();
+  params.append("id", id);
+
+  try {
+    const response = await apiTrucks.get(`?${params.toString()}`);
+    return response.data.items[0];
+  } catch (error) {
+    console.log(error);
+  }
+};

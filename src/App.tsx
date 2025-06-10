@@ -6,6 +6,7 @@ import Loading from "./pages/Loading/Loading";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Catalog = lazy(() => import("./pages/Catalog/Catalog"));
+const TruckDetails = lazy(() => import("./pages/TruckDetails/TruckDetails"));
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
-          <Route path="/catalog/:catalogId" element={<div>soon</div>} />
+          <Route path="/catalog/:catalogId" element={<TruckDetails />}>
+            <Route path="futures" element={<div>futures</div>} />
+            <Route path="revievs" element={<div>revievs</div>} />
+          </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
