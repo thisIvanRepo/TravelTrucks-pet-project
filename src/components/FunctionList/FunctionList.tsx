@@ -1,9 +1,10 @@
+import type { Camper } from "../../interface/camper";
 import FunctionItem from "../FunctionItem/FunctionItem";
 import style from "./FunctionList.module.scss";
 
 type propCumper = {
   limit?: number;
-  cumper: Record<string, boolean | string | []>;
+  cumper: Camper;
 };
 
 export default function FunctionList({ limit, cumper }: propCumper) {
