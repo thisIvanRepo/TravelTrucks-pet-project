@@ -38,10 +38,8 @@ export default function FormBoging() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 2,
+          gap: '14px',
           maxWidth: 400,
-          mx: "auto",
-          mt: 4,
         }}
       >
         <TextField
